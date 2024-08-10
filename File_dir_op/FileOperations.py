@@ -1,7 +1,13 @@
 import os
+import mimetypes
+
 
 workingTreePath = os.getcwd()
 
+
+def isTextFileMimetype(filepath):
+    mimetype, _ = mimetypes.guess_type(filepath)
+    return mimetype is not None and mimetype.startswith('text/')
 
 def createFile(file_name):
     with open(workingTreePath + "\\" +file_name, "wb") as file:
@@ -16,10 +22,10 @@ def readFileContent(file_name):
     content = ""
     with open(workingTreePath + "\\" +file_name , "rb") as file:
         content = file.read()
-    if not file_name.endswith(".docx"):
-        content = normalize_line_endings(content)
+    if isTextFileMimetype(workingTreePath + "\\" +file_name):
+        content = normalizeLineEndings(content)
     return content
 
-def normalize_line_endings(content):
+def normalizeLineEndings(content):
     # Convert CRLF to LF
     return content.replace(b'\r\n', b'\n').replace(b'\r', b'\n')

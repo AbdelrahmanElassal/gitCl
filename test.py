@@ -1,6 +1,6 @@
 from Objects.Blob import Blob
 
-obj = Blob("cc.docx")
+obj = Blob("ww.jpeg")
 
 print(obj.getSha())
 
