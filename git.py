@@ -10,6 +10,7 @@ def main():
     if len(sys.argv) > 1 and sys.argv[1] == "init":
         InitCommand()
 
+    
 
 
 if __name__ == "__main__":

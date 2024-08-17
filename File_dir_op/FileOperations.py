@@ -6,7 +6,7 @@ workingTreePath = os.getcwd()
 
 
 def isTextFileMimetype(filepath):
-    mimetype, _ = mimetypes.guess_type(filepath)
+    mimetype, encoding = mimetypes.guess_type(filepath , strict= False)
     return mimetype is not None and mimetype.startswith('text/')
 
 def createFile(file_name):
