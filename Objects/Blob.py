@@ -22,5 +22,5 @@ class Blob(Iobject):
 
     def saveObjToDatabase(self):
         sha = self.getSha()
-        DirOp.createDir(".git\\objects\\" + sha[0:2])
-        FileOp.writeIntoFile(".git\\objects\\"+ sha[0:2] + "\\"+ sha[2:] , FileOp.readFileContent(self.file_name))
+        DirOp.createDir(".git/objects/" + sha[0:2])
+        FileOp.writeIntoFile(".git/objects/"+ sha[0:2] + "/"+ sha[2:] , FileOp.readFileContent(self.file_name))

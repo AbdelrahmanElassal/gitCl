@@ -3,25 +3,25 @@ import File_dir_op.FileOperations as FileOp
 
 
 def _initDescription():
-    FileOp.createFile(".git\\description")
+    FileOp.createFile(".git/description")
 
 def _initObjects():
-    DirOp.createDir(".git\\objects")
-    DirOp.createDir(".git\\objects\\pack")
-    DirOp.createDir(".git\\objects\\info")
+    DirOp.createDir(".git/objects")
+    DirOp.createDir(".git/objects/pack")
+    DirOp.createDir(".git/objects/info")
 
 def _initHooks():
-    DirOp.createDir(".git\\hooks")
+    DirOp.createDir(".git/hooks")
 
 def _initHEAD():
-    FileOp.createFile(".git\\HEAD")
-    FileOp.writeIntoFile(".git\\HEAD" , "ref: refs/heads/master\n")
+    FileOp.createFile(".git/HEAD")
+    FileOp.writeIntoFile(".git/HEAD" , "ref: refs/heads/master\n")
 
 def _initRefs():
-    DirOp.createDir(".git\\refs")
+    DirOp.createDir(".git/refs")
 
 def _initConfig():
-    FileOp.createFile(".git\\config")
+    FileOp.createFile(".git/config")
 
 def _Intialize():
     DirOp.createDir(".git")

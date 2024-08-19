@@ -10,19 +10,19 @@ def isTextFileMimetype(filepath):
     return mimetype is not None and mimetype.startswith('text/')
 
 def createFile(file_name):
-    with open(workingTreePath + "\\" +file_name, "wb") as file:
+    with open(workingTreePath + "/" +file_name, "wb") as file:
         file.write(b"")
 
 def writeIntoFile(file_name , content):
-    with open(workingTreePath + "\\" + file_name, "wb") as file:
+    with open(workingTreePath + "/" + file_name, "wb") as file:
         content = bytes(content, encoding='utf-8') if isinstance(content, str) else content
         file.write(content)
 
 def readFileContent(file_name):
     content = ""
-    with open(workingTreePath + "\\" +file_name , "rb") as file:
+    with open(workingTreePath + "/" +file_name , "rb") as file:
         content = file.read()
-    if isTextFileMimetype(workingTreePath + "\\" +file_name):
+    if isTextFileMimetype(workingTreePath + "/" +file_name):
         content = normalizeLineEndings(content)
     return content
 
