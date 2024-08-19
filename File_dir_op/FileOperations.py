@@ -22,8 +22,8 @@ def readFileContent(file_name):
     content = ""
     with open(workingTreePath + "/" +file_name , "rb") as file:
         content = file.read()
-    if isTextFileMimetype(workingTreePath + "/" +file_name):
-        content = normalizeLineEndings(content)
+    # if isTextFileMimetype(workingTreePath + "/" +file_name):
+        # content = normalizeLineEndings(content)
     return content
 
 def normalizeLineEndings(content):

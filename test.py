@@ -1,10 +1,9 @@
 from Objects.Blob import Blob
 
-obj = Blob("index.html")
+obj = Blob("cc.docx")
 
 print(obj.getSha())
 
-obj.saveObjToDatabase()
 
 
 
