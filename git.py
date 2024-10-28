@@ -1,5 +1,6 @@
 import sys
-from Init.CInit import InitCommand
+from CInit import InitCommand
+from ChashObj import hashObjectCommand
 
 
 
@@ -9,7 +10,8 @@ def main():
     
     if len(sys.argv) > 1 and sys.argv[1] == "init":
         InitCommand()
-
+    elif len(sys.argv) > 2 and sys.argv[1] == "hash-object":
+        print(hashObjectCommand(sys.argv[2]))
     
 
 

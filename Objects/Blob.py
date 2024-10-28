@@ -1,7 +1,7 @@
 from Objects.Iobject import Iobject
 import Sha 
 import File_dir_op.FileOperations as FileOp
-import File_dir_op.DirOperations as DirOp
+
 
 
 class Blob(Iobject):
@@ -19,8 +19,3 @@ class Blob(Iobject):
         header = f"blob {size}\0".encode()
         object_data = header + content
         return Sha.calculate_sha1(object_data)
-
-    def saveObjToDatabase(self):
-        sha = self.getSha()
-        DirOp.createDir(".git/objects/" + sha[0:2])
-        FileOp.writeIntoFile(".git/objects/"+ sha[0:2] + "/"+ sha[2:] , FileOp.readFileContent(self.file_name))

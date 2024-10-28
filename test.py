@@ -1,9 +1,7 @@
-from Objects.Blob import Blob
+from Objects.Tree import Tree
 
-obj = Blob("cc.docx")
+obj = Tree("./")
 
+
+print(obj._serializeContent().decode())
 print(obj.getSha())
-
-
-
-

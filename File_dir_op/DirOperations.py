@@ -13,3 +13,4 @@ def createDir(name):
 
 def CheckDir(name):
     return os.path.isdir(workingTreePath+"/"+name)
+
